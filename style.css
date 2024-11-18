@@ -1,0 +1,163 @@
+/* Full-screen flex container to center canvas and button column */
+body, html {
+    height: 100%;
+    margin: 20px;
+    display: flex;
+    padding: 50px; /* Add padding to ensure elements have space from the edges */
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: rgb(246, 205, 223);
+
+}
+
+h1{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 50px;
+    color:rgb(121, 56, 35);
+
+}
+
+/* Container for canvas and buttons */
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Style the canvas */
+#cardCanvas {
+    border: 2px solid #724c4c;
+    background-color: #fad6d6;
+    height: auto;
+    width: 100%;
+}
+
+/* Column for buttons */
+.button-row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+
+}
+
+/* Button styling */
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgb(255, 164, 164);
+    border: 1px solid 724c4c;
+    border-radius: 20px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+
+.top-row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/* Style for images in the top row */
+.top-row img {
+    max-height: 150px; /* Adjust this value as needed */
+    width: auto;       /* Keeps the aspect ratio intact */
+    object-fit: contain; /* Ensures the image is contained within the boundaries without stretching */
+}
+
+
+.top-row img:hover {
+    filter: brightness(1.2) contrast(1.5); /* Example of changing brightness and contrast */
+}
+
+button:hover{
+    background-color:#ffe9e9 ;
+}
+
+/* the modal that covers the background and prevents user interactions */
+.modal {
+    display: none; /* hides the modal from view by default*/
+    position: fixed; /* keeps the modal in one place */
+    z-index: 2; /* positions the modal on top of all other elements on the screen */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(255, 216, 216, 0.4); /* 40% opacity black - other elements can still be seen */
+    flex-direction: column; /* these flexbox rules center the content on the screen */
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* box that contains all the content and images */
+  .modal-content {
+    background-color: rgb(239, 189, 191); /* update the colors and font sizes as you like */
+    color: black;
+    text-align: center;
+    font-size: 3rem;
+    display: flex; /* adds flexbox to center all items */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #thanks-modal-content {
+    width: 20rem; /* sets a default width for the text container */
+  }
+  
+  #modal-text-container {
+    display: flex; /* adds flexbox to center the text and buttons (stretch feature) */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+/* Media query for small screens (phones) */
+@media (max-width: 768px) {
+    body, html {
+        padding: 20px;
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    h1 {
+        font-size: 30px; /* Smaller title font */
+        text-align: center;
+    }
+
+    .container {
+        gap: 15px;
+    }
+
+    #cardCanvas {
+        width: 90%; /* Adjust canvas width for smaller screens */
+        max-width: 500px; /* Ensure it doesn't get too large */
+    }
+
+    .button-row {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 15px;
+    }
+
+    .top-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .top-row img {
+        max-height: 100px; /* Adjust image size */
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .modal-content {
+        font-size: 2rem; /* Adjust modal font size */
+    }
+}

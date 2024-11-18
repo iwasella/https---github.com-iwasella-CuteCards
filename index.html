@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/decor/favicon.ico"> 
+
+    <title>Cute Cards</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <!-- Modal -->
+    <div id="thanks-modal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div id="modal-text-container">
+        <!-- text here -->
+         <p>You've created a card!!</p>
+        </div>
+        <!-- image here-->
+         <img src="images/decor/maffy.jpg" height="140px" />
+    </div>
+        
+    </div>
+
+
+    <div class="container">
+        <h1>Cute Cards!</h1>
+        <!-- Roq of buttons for customization -->
+         <div class="top-row">
+            <img src="images/decor/miffy.png"/>
+            <div class="button-row">
+                <button onclick="changeBackgroundImage()">Change Background Image</button>
+                <button onclick="changeTextImage()">Change Text Image</button>
+                <button onclick="saveCardAsImage()">Save Card as Image</button>
+                <button onclick="sendCardAsEmail()">Send as Email</button>
+            </div>
+            <img src="images/decor/moofy.png"/>
+        </div>   
+
+            <!-- Canvas for the greeting card -->
+            <canvas id="cardCanvas" width="1050" height="600"></canvas>
+
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="app.js"></script>
+</body>
+</html>
